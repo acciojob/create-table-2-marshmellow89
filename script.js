@@ -7,8 +7,6 @@ function createTable() {
 	let cn = prompt("Input number of columns");
 	cn = parseInt(cn);
 
-	let tr = document.createElement("tr");
-	let td = document.createElement("td");
 	const table = document.querySelector("#myTable");
 
 	if((!rn ||rn<=0)|| (!cn || cn<=0)){
@@ -16,9 +14,12 @@ function createTable() {
 	}else{
 	for(let i=0;i<rn;i++){
 
+		const tr = document.createElement("tr");
+		
 		for(let j=0;j<cn;j++){
+		  let td = document.createElement("td");
           td.textContent = `Row-${i} Column-${j}`
-			tr.appendChild(td);
+		  tr.appendChild(td);
 		}
 		table.appendChild(tr);
 	};
